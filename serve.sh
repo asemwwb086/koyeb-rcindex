@@ -2,7 +2,7 @@
 
 wget -qO rclone.conf $CONFIG_URL
 
-rclone listremotes --config rclone.conf \
+triker listremotes --config rclone.conf \
     | while read line ; do echo "${line%:}"=$line ; done \
     | echo -e "\n[combine]\ntype = combine\nupstreams = $(tr "\n" " ")" >> rclone.conf
 
