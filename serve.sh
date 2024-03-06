@@ -8,26 +8,24 @@ rclone listremotes --config rclone.conf \
 
 if [ -n "${USERNAME}" ] && [ -n "${PASSWORD}" ]; then
 
-rclone serve http combine: \
+triker serve http combine: \
     --config=rclone.conf \
     --addr=:$PORT \
     --user=$USERNAME \
     --pass=$PASSWORD \
-    --buffer-size=256M \
+    --buffer-size=64M \
     --template=dark.html \
     --vfs-cache-mode=full \
-    --vfs-cache-max-size=5G \
-    --vfs-cache-max-age=15m0s
+    --vfs-cache-max-age=1m0s
 
 else
 
-rclone serve http combine: \
+triker serve http combine: \
     --config=rclone.conf \
     --addr=:$PORT \
-    --buffer-size=256M \
+    --buffer-size=64M \
     --template=dark.html \
     --vfs-cache-mode=full \
-    --vfs-cache-max-size=5G \
-    --vfs-cache-max-age=15m0s
+    --vfs-cache-max-age=1m0s
 
 fi
