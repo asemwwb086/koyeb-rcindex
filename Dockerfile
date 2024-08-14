@@ -1,8 +1,6 @@
 FROM rclone/rclone
-WORKDIR /app/
+WORKDIR /warish/
 
-COPY dark.html serve.sh .
-RUN chmod +x serve.sh
-RUN mv /usr/local/bin/rclone /usr/bin/triker
+COPY dark.html warish.sh .
 
-ENTRYPOINT ["./serve.sh"]
+ENTRYPOINT ["sh", "warish.sh"]
