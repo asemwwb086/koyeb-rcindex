@@ -13,8 +13,7 @@ rclone serve http combine: \
     --template=dark.html \
     --addr=:$PORT \
     --user=$USER \
-    --pass=$PASS \
-    --read-only
+    --pass=$PASS
 
 else
 
